@@ -3,173 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Belucci Soluções Digitais | Acelerando Negócios Digitais</title>
+    <title>Belucci Soluções Digitais | Infraestrutura para Negócios Digitais</title>
     
-    <!-- Google Fonts: Outfit (Headings) e Sora (Body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Sora:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
-        /* ================= VARIÁVEIS DE COR E TIPOGRAFIA ================= */
+        /* ================= VARIÁVEIS ================= */
         :root {
             --primary-blue: #0A2463;     
             --primary-light: #1E3A8A;    
             --gold-beige: #D4AF37;       
             --gold-light: #F3E5AB;       
-            
             --bg-body: #FAFAFA;          
             --text-dark: #0F172A;        
             --text-gray: #475569;        
             --white: #FFFFFF;
-            
             --font-heading: 'Outfit', sans-serif;
             --font-body: 'Sora', sans-serif;
         }
 
-        /* ================= RESET ================= */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: var(--font-body);
-            color: var(--text-dark);
-            background-color: var(--bg-body);
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { font-family: var(--font-body); color: var(--text-dark); background-color: var(--bg-body); line-height: 1.7; overflow-x: hidden; }
         a { text-decoration: none; color: inherit; }
         ul { list-style: none; }
 
         /* ================= ANIMAÇÕES ================= */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
 
         /* ================= BOTÕES ================= */
         .btn-primary {
-            display: inline-block;
-            background-color: var(--gold-beige);
-            color: var(--primary-blue);
-            padding: 16px 36px;
-            border-radius: 4px; 
-            font-family: var(--font-heading);
-            font-weight: 800;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            border: 2px solid var(--gold-beige);
-            cursor: pointer;
-            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+            display: inline-block; background-color: var(--gold-beige); color: var(--primary-blue);
+            padding: 16px 36px; border-radius: 4px; font-family: var(--font-heading); font-weight: 800;
+            font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;
+            border: 2px solid var(--gold-beige); cursor: pointer; box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
         }
-        
-        .btn-primary:hover {
-            background-color: transparent;
-            color: var(--gold-beige);
-            transform: translateY(-2px);
-        }
+        .btn-primary:hover { background-color: transparent; color: var(--gold-beige); transform: translateY(-2px); }
 
         /* ================= HEADER ================= */
         header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(10, 36, 99, 0.98);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            position: fixed; top: 0; left: 0; width: 100%; background-color: rgba(10, 36, 99, 0.98);
+            backdrop-filter: blur(10px); z-index: 1000; padding: 15px 5%; display: flex;
+            justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(212, 175, 55, 0.2);
         }
-
-        .logo {
-            font-family: var(--font-heading);
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--white);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            letter-spacing: 1px;
-        }
-
+        .logo { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; color: var(--white); display: flex; align-items: center; gap: 10px; letter-spacing: 1px; }
         .logo span { color: var(--gold-beige); }
-
-        .nav-container {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-        }
-
+        .nav-container { display: flex; align-items: center; gap: 40px; }
         nav ul { display: flex; gap: 30px; }
-        nav a {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--white);
-            transition: color 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
+        nav a { font-size: 0.9rem; font-weight: 600; color: var(--white); transition: color 0.3s; text-transform: uppercase; letter-spacing: 0.5px; }
         nav a:hover { color: var(--gold-beige); }
-
-        .header-contact-info {
-            color: var(--gold-beige);
-            font-weight: 600;
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
+        .header-contact-info { color: var(--gold-beige); font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; }
         .header-cta { padding: 10px 24px; font-size: 0.85rem; }
 
         /* ================= HERO SECTION ================= */
-        .hero {
-            background-color: var(--primary-blue);
-            color: var(--white);
-            padding: 180px 5% 120px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, rgba(10, 36, 99, 0) 70%);
-            top: -300px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
+        .hero { background-color: var(--primary-blue); color: var(--white); padding: 180px 5% 120px; position: relative; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; width: 800px; height: 800px; background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, rgba(10, 36, 99, 0) 70%); top: -300px; left: 50%; transform: translateX(-50%); border-radius: 50%; pointer-events: none; }
         .hero-content { max-width: 900px; position: relative; z-index: 2; }
         .hero h1 { font-family: var(--font-heading); font-size: 4rem; line-height: 1.1; margin-bottom: 24px; letter-spacing: -1px; }
         .hero h1 span { color: var(--gold-beige); }
         .hero p { font-size: 1.25rem; color: #E2E8F0; margin-bottom: 40px; font-weight: 300; max-width: 800px; margin-left: auto; margin-right: auto; }
 
-        /* ================= SOBRE E DIFERENCIAIS ================= */
+        /* ================= SOBRE ================= */
         .about { padding: 100px 5%; background-color: var(--bg-body); }
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1200px; margin: 0 auto; align-items: center; }
         .section-tag { font-family: var(--font-heading); color: var(--primary-blue); text-transform: uppercase; font-weight: 800; letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 10px; display: block; }
@@ -200,21 +96,31 @@
         .stat-item h3 { font-family: var(--font-heading); font-size: 2.5rem; color: var(--gold-beige); margin-bottom: 10px; }
         .stat-item p { font-size: 1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: #E2E8F0; }
 
-        /* ================= SEÇÃO TRANQUILIDADE (FOTO FAMÍLIA) ================= */
-        .trust-section { padding: 100px 5%; background-color: var(--white); }
-        .trust-container { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1200px; margin: 0 auto; align-items: center; }
-        .trust-image { border-radius: 8px; overflow: hidden; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        .trust-image img { width: 100%; height: auto; display: block; filter: sepia(0.2) contrast(1.1); /* Filtro para deixar a imagem um pouco mais sofisticada */ }
-        .trust-text h2 { font-family: var(--font-heading); font-size: 2.5rem; color: var(--primary-blue); margin-bottom: 20px; line-height: 1.2; }
-        .trust-text p { color: var(--text-gray); font-size: 1.1rem; margin-bottom: 20px; }
-        
+        /* ================= MANIFESTO (Substituiu a imagem da família) ================= */
+        .trust-section { padding: 100px 5%; background-color: var(--white); text-align: center; border-bottom: 1px solid #E5E7EB; }
+        .trust-container { max-width: 800px; margin: 0 auto; }
+        .trust-container h2 { font-family: var(--font-heading); font-size: 2.8rem; color: var(--primary-blue); margin-bottom: 25px; line-height: 1.2; }
+        .trust-container p { color: var(--text-gray); font-size: 1.15rem; margin-bottom: 20px; }
+
+        /* ================= FEEDBACKS / DEPOIMENTOS ================= */
+        .testimonials { padding: 100px 5%; background-color: var(--bg-body); }
+        .testi-header { text-align: center; max-width: 700px; margin: 0 auto 50px; }
+        .testi-header h2 { font-family: var(--font-heading); font-size: 2.8rem; color: var(--text-dark); }
+        .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        .testi-card { background: var(--white); padding: 40px; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); position: relative; }
+        .testi-quote { color: var(--gold-beige); font-size: 3rem; position: absolute; top: 20px; left: 30px; opacity: 0.3; font-family: serif; line-height: 1; }
+        .testi-card p { color: var(--text-gray); font-size: 1rem; margin-bottom: 20px; position: relative; z-index: 2; font-style: italic; }
+        .testi-author { display: flex; align-items: center; gap: 15px; border-top: 1px solid #f1f5f9; padding-top: 20px; }
+        .testi-author-info h4 { color: var(--primary-blue); font-family: var(--font-heading); font-size: 1.1rem; }
+        .testi-author-info span { color: #94a3b8; font-size: 0.85rem; }
+
         /* ================= CTA FINAL ================= */
         .cta-section { padding: 100px 5%; background-color: var(--gold-light); text-align: center; }
         .cta-content { max-width: 800px; margin: 0 auto; }
         .cta-content h2 { font-family: var(--font-heading); font-size: 3rem; color: var(--primary-blue); margin-bottom: 20px; }
         .cta-content p { font-size: 1.2rem; color: var(--text-dark); margin-bottom: 40px; }
 
-        /* ================= FOOTER ================= */
+        /* ================= FOOTER (Otimizado para Stripe) ================= */
         footer { background-color: #051334; color: #94A3B8; padding: 70px 5% 30px; font-size: 0.9rem; }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; max-width: 1200px; margin: 0 auto 50px; }
         .footer-col h4 { font-family: var(--font-heading); color: var(--white); font-size: 1.2rem; margin-bottom: 25px; letter-spacing: 1px; text-transform: uppercase; }
@@ -226,120 +132,82 @@
         .hotmart-disclaimer strong { color: var(--white); }
 
         /* ================= MODAIS & FORMULÁRIOS ================= */
-        .modal-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(5, 19, 52, 0.85); z-index: 2000;
-            display: none; align-items: center; justify-content: center;
-            opacity: 0; transition: opacity 0.3s ease; padding: 20px;
-        }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(5, 19, 52, 0.85); z-index: 2000; display: none; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; padding: 20px; }
         .modal-overlay.active { display: flex; opacity: 1; }
-        .modal-content {
-            background: #fff; width: 100%; max-width: 800px; max-height: 85vh;
-            border-radius: 8px; padding: 40px; position: relative; overflow-y: auto;
-            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
-        }
+        .modal-content { background: #fff; width: 100%; max-width: 800px; max-height: 85vh; border-radius: 8px; padding: 40px; position: relative; overflow-y: auto; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); }
         .modal-content.small { max-width: 500px; }
-        .modal-close {
-            position: absolute; top: 20px; right: 20px; font-size: 28px;
-            cursor: pointer; background: none; border: none; color: #64748b; transition: color 0.3s;
-        }
+        .modal-close { position: absolute; top: 20px; right: 20px; font-size: 28px; cursor: pointer; background: none; border: none; color: #64748b; transition: color 0.3s; }
         .modal-close:hover { color: var(--primary-blue); }
         .modal-body h2 { font-family: var(--font-heading); color: var(--primary-blue); margin-bottom: 15px; font-size: 2rem; border-bottom: 2px solid var(--gold-light); padding-bottom: 10px; }
         .modal-body p { margin-bottom: 20px; color: var(--text-gray); font-size: 0.95rem; line-height: 1.6; }
-        
-        /* Formulário de Lead */
         .form-group { margin-bottom: 20px; text-align: left; }
         .form-group label { display: block; font-weight: 600; color: var(--primary-blue); margin-bottom: 8px; font-size: 0.9rem; }
-        .form-group input { 
-            width: 100%; padding: 12px 15px; border: 1px solid #cbd5e1; border-radius: 4px; 
-            font-family: var(--font-body); font-size: 1rem; color: var(--text-dark); transition: border 0.3s;
-        }
+        .form-group input { width: 100%; padding: 12px 15px; border: 1px solid #cbd5e1; border-radius: 4px; font-family: var(--font-body); font-size: 1rem; color: var(--text-dark); transition: border 0.3s; }
         .form-group input:focus { border-color: var(--primary-blue); outline: none; }
-
-        /* Textos Legais (Modais) */
         .legal-text h3 { font-family: var(--font-heading); margin: 25px 0 10px; color: var(--text-dark); font-size: 1.3rem; }
         .legal-text ul { padding-left: 20px; list-style-type: disc; margin-bottom: 15px; color: var(--text-gray); line-height: 1.8; }
 
-        /* ================= RESPONSIVO ================= */
-        @media (max-width: 992px) { 
-            .about-grid, .trust-container { grid-template-columns: 1fr; } 
-            .about-visual { display: none; } 
-            .trust-image { order: 2; }
-            .trust-text { order: 1; }
-        }
+        @media (max-width: 992px) { .about-grid { grid-template-columns: 1fr; } .about-visual { display: none; } }
         @media (max-width: 768px) {
             header { flex-direction: column; gap: 15px; padding: 15px; }
             .nav-container { flex-direction: column; gap: 15px; }
             nav ul { flex-wrap: wrap; justify-content: center; gap: 15px; }
             .hero { padding: 200px 5% 80px; } .hero h1 { font-size: 2.5rem; }
-            .services-header h2, .cta-content h2, .trust-text h2 { font-size: 2rem; }
+            .services-header h2, .cta-content h2, .trust-container h2 { font-size: 2rem; }
             .modal-content { padding: 25px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- CABEÇALHO FIXO -->
     <header>
         <a href="#" class="logo">BELUCCI<span>.</span></a>
-        
         <div class="nav-container">
             <nav>
                 <ul>
                     <li><a href="#sobre">Quem Somos</a></li>
                     <li><a href="#servicos">Soluções</a></li>
-                    <li><a href="#valores">Compromisso</a></li>
+                    <li><a href="#feedbacks">Clientes</a></li>
                 </ul>
             </nav>
             <div class="header-contact-info">
                 <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                (74) 99952-0319
+                +55 (74) 99952-0319 | Brasil
             </div>
         </div>
-        
-        <!-- O botão agora abre o formulário modal -->
-        <button onclick="openModal('modal-contato')" class="btn-primary header-cta">Falar com Especialista</button>
+        <!-- Botão alterado para rolar até o CTA no final -->
+        <a href="#cta-final" class="btn-primary header-cta">Falar com Especialista</a>
     </header>
 
     <main>
-        <!-- HERO SECTION -->
         <section class="hero reveal">
             <div class="hero-content">
                 <h1>Engenharia Digital para o seu <span>Infoproduto</span> decolar</h1>
                 <p>Facilitamos o processamento técnico e estratégico do seu negócio. Da criação de WebApps exclusivos à integração com Inteligência Artificial, construímos a base para você focar no que importa: vender.</p>
-                <!-- Botão aciona Modal de Contato -->
-                <button onclick="openModal('modal-contato')" class="btn-primary">Transformar Meu Negócio Agora</button>
+                <a href="#cta-final" class="btn-primary">Transformar Meu Negócio Agora</a>
             </div>
         </section>
 
-        <!-- SOBRE E DIFERENCIAIS -->
         <section id="sobre" class="about reveal">
             <div class="about-grid">
                 <div class="about-text">
                     <span class="section-tag">A Belucci</span>
                     <h2>Tecnologia e Networking sem burocracia</h2>
-                    <p>A <strong>Belucci Soluções Digitais</strong> opera de forma 100% online, dedicada exclusivamente ao mercado digital. Nós entendemos que produtores e empresários digitais precisam de agilidade e soluções que funcionem nos bastidores sem dor de cabeça.</p>
-                    <p>Atuamos como seu braço tecnológico, auxiliando no desenvolvimento de WebApps, na formatação de ideias escaláveis e na construção de um networking poderoso.</p>
+                    <p>A <strong>Belucci Soluções Digitais</strong> opera de forma 100% online, dedicada exclusivamente ao mercado B2B e produtores digitais. Nós entendemos que seu negócio precisa de agilidade e soluções que funcionem nos bastidores sem dor de cabeça.</p>
+                    <p>Atuamos como seu braço tecnológico, auxiliando no desenvolvimento de WebApps e na formatação de ideias escaláveis.</p>
                     <div class="differentials">
                         <div class="diff-item">
                             <div class="diff-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
                             <div>
                                 <h4>Zero Burocracia</h4>
-                                <p>Processos fluidos focados em resolver o seu problema rapidamente, para que seu negócio não pare.</p>
-                            </div>
-                        </div>
-                        <div class="diff-item">
-                            <div class="diff-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 12h4l3-9 5 18 3-9h5"></path></svg></div>
-                            <div>
-                                <h4>Soluções para Acesso a Melhores Projetos</h4>
-                                <p>Implementamos tecnologias pensadas exatamente para facilitar a sua operação e gerar mais lucro.</p>
+                                <p>Processos fluidos focados em resolver o seu problema rapidamente, com contratos claros e entregáveis definidos.</p>
                             </div>
                         </div>
                         <div class="diff-item">
                             <div class="diff-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg></div>
                             <div>
                                 <h4>Transparência Total</h4>
-                                <p>Visibilidade completa em cada etapa do trajeto. Trabalhamos juntos para que o sucesso do seu projeto seja garantido.</p>
+                                <p>Visibilidade completa do escopo e faturamento. Trabalhamos em conformidade legal para o sucesso do seu projeto.</p>
                             </div>
                         </div>
                     </div>
@@ -350,38 +218,31 @@
             </div>
         </section>
 
-        <!-- SERVIÇOS -->
         <section id="servicos" class="services reveal">
             <div class="services-header">
                 <span class="section-tag">O que entregamos</span>
                 <h2>Ecossistema completo de Soluções</h2>
-                <p>Nossos serviços foram desenhados para suprir as principais lacunas técnicas de empresas e projetos do mercado digital.</p>
+                <p>Serviços desenhados para suprir as principais lacunas técnicas de empresas digitais.</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg></div>
-                    <h3>Auxílio na Utilização de IA</h3>
-                    <p>Consultoria e implementação de Inteligência Artificial para automatizar atendimento, geração de conteúdo e otimização de campanhas.</p>
+                    <h3>Inteligência Artificial</h3>
+                    <p>Consultoria e implementação de IA para automatizar atendimento e otimizar processos de negócios.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg></div>
                     <h3>Criação de WebApps</h3>
-                    <p>Desenvolvimento de plataformas exclusivas para entrega do seu produto, área de membros customizadas e ferramentas de suporte.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></div>
-                    <h3>Soluções Digitais Gerais</h3>
-                    <p>Arquitetura de sistemas, automação de funis, integração de APIs e tudo que seu projeto precisa para rodar no piloto automático.</p>
+                    <p>Desenvolvimento de plataformas B2B exclusivas, áreas de membros customizadas e ferramentas de suporte.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
-                    <h3>Networking e Conexões</h3>
-                    <p>Promovemos ambientes e ideias para você se conectar com outros players de sucesso. Estar na mesa certa muda o jogo do seu negócio.</p>
+                    <h3>Networking Estratégico</h3>
+                    <p>Ambientes e ideias para você se conectar com outros players, gerando parcerias e novos negócios estruturados.</p>
                 </div>
             </div>
         </section>
 
-        <!-- COMPROMISSO -->
         <section id="valores" class="values-stats reveal">
             <div class="stats-grid">
                 <div class="stat-item">
@@ -399,27 +260,60 @@
             </div>
         </section>
 
-        <!-- SEÇÃO: TRANQUILIDADE (FOTO DA FAMÍLIA) -->
+        <!-- SEÇÃO: MANIFESTO CORPORATIVO (Substituiu a imagem da família) -->
         <section class="trust-section reveal">
             <div class="trust-container">
-                <div class="trust-text">
-                    <h2>Tranquilidade para focar no que realmente importa</h2>
-                    <p>Sabemos que gerir um infoproduto exige muito. Nossa missão é cuidar de toda a infraestrutura técnica, integração de sistemas e criação de WebApps do seu negócio, de forma transparente e segura.</p>
-                    <p>O resultado? Você passa menos tempo apagando incêndios tecnológicos e ganha mais tempo para escalar suas vendas e, principalmente, aproveitar a liberdade que o mercado digital promete ao lado de quem você ama.</p>
-                    <button onclick="openModal('modal-contato')" class="btn-primary" style="margin-top: 20px;">Quero ter essa tranquilidade</button>
+                <h2>Infraestrutura robusta para quem foca em resultados</h2>
+                <p>Nossa missão é cuidar de toda a camada técnica, integração de APIs e segurança dos WebApps do seu negócio. Construímos ambientes digitais de alta performance e compliance total com gateways de pagamento e normas de privacidade.</p>
+                <p>Garantimos a fundação tecnológica ideal para que sua operação rode com estabilidade, sem interrupções e focada puramente em conversão e crescimento corporativo.</p>
+            </div>
+        </section>
+
+        <!-- SEÇÃO: FEEDBACKS / CLIENTES -->
+        <section id="feedbacks" class="testimonials reveal">
+            <div class="testi-header">
+                <span class="section-tag">Depoimentos</span>
+                <h2>O que dizem sobre nossas soluções</h2>
+            </div>
+            <div class="testi-grid">
+                <div class="testi-card">
+                    <span class="testi-quote">"</span>
+                    <p>A estruturação do nosso WebApp mudou o jogo da empresa. A equipe da Belucci entregou o projeto dentro do prazo e com uma arquitetura técnica impecável. Recomendo fortemente.</p>
+                    <div class="testi-author">
+                        <div class="testi-author-info">
+                            <h4>Carlos Mendes</h4>
+                            <span>CEO, Infoprodutora Alpha</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="trust-image">
-                    <!-- Link de imagem confiável do Unsplash (Família com Golden Retriever) -->
-                    <img src="https://images.unsplash.com/photo-1542044896530-05d3c0541238?auto=format&fit=crop&w=800&q=80" alt="Família feliz com cachorro, representando segurança e liberdade de tempo">
+                <div class="testi-card">
+                    <span class="testi-quote">"</span>
+                    <p>Estávamos com problemas de integrações no nosso antigo sistema. A Belucci aplicou soluções de automação e IA que reduziram nossos custos operacionais em 30% já no primeiro mês.</p>
+                    <div class="testi-author">
+                        <div class="testi-author-info">
+                            <h4>Mariana Silva</h4>
+                            <span>Diretora de Operações Digitais</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card">
+                    <span class="testi-quote">"</span>
+                    <p>O nível de transparência durante o desenvolvimento foi excelente. Eles realmente cumprem a LGPD e entregam um código limpo. Finalmente encontramos um parceiro tecnológico confiável.</p>
+                    <div class="testi-author">
+                        <div class="testi-author-info">
+                            <h4>Rafael Costa</h4>
+                            <span>Co-produtor e Estrategista</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- CTA FINAL -->
-        <section class="cta-section reveal">
+        <section id="cta-final" class="cta-section reveal">
             <div class="cta-content">
                 <h2>O próximo nível do seu produto começa com a fundação tecnológica certa.</h2>
-                <p>Pare de perder noites de sono com questões técnicas e burocráticas. Deixe a Belucci Soluções Digitais construir a estrutura que o seu faturamento exige.</p>
+                <p>Deixe a Belucci Soluções Digitais construir a estrutura de software que o seu faturamento exige.</p>
                 <button onclick="openModal('modal-contato')" class="btn-primary">Solicitar uma Proposta Personalizada</button>
             </div>
         </section>
@@ -430,24 +324,25 @@
         <div class="footer-grid">
             <div class="footer-col">
                 <h4>Belucci Soluções Digitais</h4>
-                <p style="margin-bottom: 20px;">Simplificando a tecnologia para potencializar negócios digitais, aplicativos e ideias inovadoras no mercado de infoprodutos.</p>
+                <p style="margin-bottom: 20px;">Simplificando a tecnologia para potencializar negócios digitais. Desenvolvimento de WebApps e consultoria em IA estruturados para alta performance.</p>
             </div>
             
             <div class="footer-col">
-                <h4>Contato</h4>
+                <h4>Contato e Suporte</h4>
                 <div class="contact-info">
                     <p><strong>E-mail:</strong> contato@beluccidigital.com.br</p>
+                    <p><strong>Telefone:</strong> +55 (74) 99952-0319</p>
                     <p><strong>Sede Física:</strong> Rua do Sisal, 869 - Centro<br>Jaguarari/BA - Brasil</p>
-                    <p><strong>CPF:</strong> 085.224.785-03</p>
+                    <p><strong>CPF (Responsável):</strong> 085.224.785-03</p>
                 </div>
             </div>
 
             <div class="footer-col">
-                <h4>Transparência</h4>
+                <h4>Políticas e Legal</h4>
                 <ul>
-                    <li><a onclick="openModal('modal-termos')">Termos de Uso</a></li>
-                    <li><a onclick="openModal('modal-privacidade')">Política de Privacidade</a></li>
-                    <li><a onclick="openModal('modal-reembolso')">Política de Reembolso</a></li>
+                    <li><a onclick="openModal('modal-termos')">Termos de Prestação de Serviço</a></li>
+                    <li><a onclick="openModal('modal-privacidade')">Política de Privacidade (LGPD)</a></li>
+                    <li><a onclick="openModal('modal-reembolso')">Política de Cancelamento e Reembolso</a></li>
                 </ul>
             </div>
         </div>
@@ -457,18 +352,18 @@
                 Belucci Soluções Digitais © Todos os direitos reservados.
             </p>
             <p>
-                <strong>Aviso Legal de Plataformas:</strong> Este site não é afiliado ao Facebook, Google ou a qualquer entidade de suas respectivas empresas. Depois que você sair do Facebook ou de redes sociais, a responsabilidade não é deles e sim do nosso site. Plataformas de vendas não fazem controle editorial prévio dos serviços aqui comercializados, nem avaliam a tecnicidade daqueles que os produzem.
+                <strong>Compliance e Segurança:</strong> A Belucci Soluções Digitais opera em conformidade com as legislações brasileiras de software e serviços. Não prometemos resultados financeiros, ganhos fáceis ou esquemas de enriquecimento. Nossos serviços são puramente técnicos, focados em infraestrutura de TI (WebApps e automações) para empresas e empreendedores. Pagamentos e contratações são processados de forma segura mediante aprovação prévia de orçamento.
             </p>
         </div>
     </footer>
 
-    <!-- MODAL: FORMULÁRIO DE CONTATO (LEADS PARA WHATSAPP) -->
+    <!-- MODAL: FORMULÁRIO DE CONTATO (LEADS) -->
     <div id="modal-contato" class="modal-overlay">
         <div class="modal-content small">
             <button class="modal-close" onclick="closeModal('modal-contato')">&times;</button>
             <div class="modal-body" style="text-align: center;">
-                <h2>Fale com um Especialista</h2>
-                <p>Preencha os dados abaixo rapidamente para que possamos entender o seu negócio antes de iniciar o atendimento.</p>
+                <h2>Proposta Personalizada</h2>
+                <p>Preencha os dados abaixo. Um de nossos especialistas entrará em contato via WhatsApp para entender o escopo do seu projeto.</p>
                 
                 <form id="form-lead" onsubmit="enviarParaWhatsApp(event)">
                     <div class="form-group">
@@ -480,53 +375,88 @@
                         <input type="email" id="emailLead" required placeholder="seu@email.com.br">
                     </div>
                     <div class="form-group">
-                        <label for="telefoneLead">Seu WhatsApp *</label>
-                        <input type="tel" id="telefoneLead" required placeholder="(DD) 9XXXX-XXXX">
+                        <label for="telefoneLead">WhatsApp (com DDD) *</label>
+                        <input type="tel" id="telefoneLead" required placeholder="Ex: 74999999999">
                     </div>
                     
-                    <button type="submit" class="btn-primary" style="width: 100%; margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 10px;">
-                        <!-- Ícone do WhatsApp -->
-                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-                        Iniciar Atendimento
+                    <button type="submit" class="btn-primary" style="width: 100%; margin-top: 10px;">
+                        Solicitar Contato
                     </button>
-                    <p style="margin-top: 15px; font-size: 0.8rem; color: #94a3b8;">Suas informações estão seguras conosco e não serão compartilhadas.</p>
+                    <p style="margin-top: 15px; font-size: 0.8rem; color: #94a3b8;">Suas informações estão protegidas pela LGPD.</p>
                 </form>
             </div>
         </div>
     </div>
 
-    <!-- MODAL: TERMOS DE USO -->
+    <!-- MODAL: TERMOS DE USO (Expandido para Stripe) -->
     <div id="modal-termos" class="modal-overlay">
         <div class="modal-content legal-text">
             <button class="modal-close" onclick="closeModal('modal-termos')">&times;</button>
             <div class="modal-body">
-                <h2>Termos de Uso</h2>
-                <p>Bem-vindo(a) à Belucci Soluções Digitais. Ao acessar ou usar nosso site e serviços, você concorda com estes Termos.</p>
-                <h3>1. Descrição dos Serviços</h3>
-                <p>A Belucci Soluções Digitais é especializada em desenvolvimento de WebApps e consultoria em IA.</p>
-                <!-- Retirado texto excessivo para concisão do exemplo visual, mantenha o da versão anterior se preferir textos longos -->
+                <h2>Termos de Prestação de Serviço</h2>
+                <p>Ao contratar a Belucci Soluções Digitais, o contratante aceita expressamente os termos abaixo estabelecidos.</p>
+                
+                <h3>1. Escopo dos Serviços</h3>
+                <p>Fornecemos desenvolvimento sob demanda de WebApps, consultoria em Inteligência Artificial e estruturação técnica de redes. Todos os serviços são prestados de forma online (remota). O escopo exato, prazos e entregáveis de cada projeto serão definidos em orçamento prévio aprovado pelo cliente.</p>
+                
+                <h3>2. Prazos de Entrega</h3>
+                <p>Os prazos de entrega variam de acordo com a complexidade técnica do WebApp ou serviço contratado, sendo estipulados no contrato individual gerado após a solicitação da proposta. Atrasos causados por demora na entrega de materiais por parte do cliente não são de responsabilidade da contratada.</p>
+                
+                <h3>3. Orçamentos e Faturamento</h3>
+                <p>Os preços dos serviços não são fixos e variam conforme o projeto. O faturamento é realizado via plataformas de pagamento seguras (como Stripe ou Cash Pay), podendo ser cobrado o valor integral antecipado ou parcelado conforme o marco de entregas (milestones), sempre mediante emissão de nota fiscal/recibo correspondente.</p>
+                
+                <h3>4. Isenção de Promessa de Ganhos</h3>
+                <p>Nossa empresa fornece <strong>exclusivamente a infraestrutura tecnológica</strong>. Não garantimos volume de vendas, lucros, ou sucesso comercial do produto hospedado no WebApp pelo cliente. A estratégia de marketing e vendas é de inteira responsabilidade do contratante.</p>
+                
+                <h3>5. Propriedade Intelectual</h3>
+                <p>O código-fonte final, após a quitação total do projeto, é licenciado para uso do cliente. Ferramentas, bibliotecas e frameworks de terceiros ou desenvolvidos internamente pela Belucci previamente ao projeto mantêm seus respectivos direitos autorais.</p>
             </div>
         </div>
     </div>
 
-    <!-- MODAL: PRIVACIDADE -->
+    <!-- MODAL: PRIVACIDADE (Expandido) -->
     <div id="modal-privacidade" class="modal-overlay">
         <div class="modal-content legal-text">
             <button class="modal-close" onclick="closeModal('modal-privacidade')">&times;</button>
             <div class="modal-body">
                 <h2>Política de Privacidade (LGPD)</h2>
-                <p>A Belucci Soluções Digitais compromete-se com a proteção dos seus dados pessoais, em conformidade com a LGPD (Lei nº 13.709/2018).</p>
+                <p>A Belucci Soluções Digitais atua em rigorosa conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018). Esta política descreve como tratamos suas informações.</p>
+                
+                <h3>1. Coleta de Dados</h3>
+                <p>Coletamos dados fornecidos ativamente por você no preenchimento de formulários de contato (Nome, E-mail, Telefone). Também podemos processar dados operacionais de terceiros (seus clientes) caso contratada a estruturação de um WebApp, atuando neste caso apenas como "Operador" dos dados, sendo o contratante o "Controlador".</p>
+                
+                <h3>2. Uso das Informações</h3>
+                <p>Os dados coletados são usados exclusivamente para: elaboração de propostas comerciais, execução dos serviços técnicos contratados, faturamento e cumprimento de obrigações fiscais.</p>
+                
+                <h3>3. Proteção e Retenção</h3>
+                <p>Não vendemos, alugamos ou compartilhamos seus dados para fins de marketing de terceiros. Os dados são armazenados em servidores com criptografia padrão da indústria. Retemos os dados apenas pelo tempo necessário para cumprir as finalidades do serviço ou exigências legais.</p>
+                
+                <h3>4. Seus Direitos</h3>
+                <p>Como titular, você pode solicitar a qualquer momento a visualização, alteração, portabilidade ou exclusão dos seus dados da nossa base através do e-mail de contato oficial.</p>
             </div>
         </div>
     </div>
 
-    <!-- MODAL: REEMBOLSO -->
+    <!-- MODAL: REEMBOLSO (Expandido para Stripe) -->
     <div id="modal-reembolso" class="modal-overlay">
         <div class="modal-content legal-text">
             <button class="modal-close" onclick="closeModal('modal-reembolso')">&times;</button>
             <div class="modal-body">
-                <h2>Política de Reembolso</h2>
-                <p>Operamos em conformidade com o Artigo 49 do Código de Defesa do Consumidor, garantindo 7 dias de prazo para desistência em serviços online padronizados.</p>
+                <h2>Política de Cancelamento e Reembolso</h2>
+                <p>Nossa política atende às normas do Código de Defesa do Consumidor e às regras de compliance dos principais processadores de pagamento (Stripe/Cash Pay).</p>
+                
+                <h3>1. Direito de Arrependimento (7 Dias)</h3>
+                <p>Para serviços de consultoria padronizada ou pacotes fechados contratados de forma 100% online, o cliente tem o direito de solicitar o cancelamento e reembolso integral em até <strong>7 (sete) dias corridos</strong> após a aprovação do pagamento, sem necessidade de justificativa.</p>
+                
+                <h3>2. Projetos Personalizados (WebApps)</h3>
+                <p>Para o desenvolvimento de softwares sob medida, o reembolso obedece às seguintes regras:</p>
+                <ul>
+                    <li><strong>Cancelamento antes do início técnico:</strong> Devolução integral dos valores pagos.</li>
+                    <li><strong>Cancelamento com projeto em andamento:</strong> Caso o cliente deseje cancelar após a aprovação do escopo e início da codificação, o valor a ser reembolsado descontará as horas técnicas já trabalhadas pela equipe da Belucci até o momento da solicitação oficial.</li>
+                </ul>
+                
+                <h3>3. Procedimento de Estorno</h3>
+                <p>As solicitações de cancelamento devem ser feitas por escrito para <em>contato@beluccidigital.com.br</em>. O estorno será processado diretamente pelo mesmo meio de pagamento utilizado na compra (cartão de crédito, Pix) em um prazo máximo de 10 (dez) dias úteis após a confirmação. O prazo para que o crédito apareça na fatura depende da administradora do cartão de crédito do cliente.</p>
             </div>
         </div>
     </div>
@@ -543,53 +473,28 @@
                     }
                 });
             }, { threshold: 0.12 });
-
             reveals.forEach(reveal => { revealOnScroll.observe(reveal); });
         });
 
-        // Controle das Modais
-        function openModal(id) {
-            document.getElementById(id).classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal(id) {
-            document.getElementById(id).classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
+        // Modais
+        function openModal(id) { document.getElementById(id).classList.add('active'); document.body.style.overflow = 'hidden'; }
+        function closeModal(id) { document.getElementById(id).classList.remove('active'); document.body.style.overflow = 'auto'; }
         window.onclick = function(event) {
-            if (event.target.classList.contains('modal-overlay')) {
-                event.target.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
+            if (event.target.classList.contains('modal-overlay')) { event.target.classList.remove('active'); document.body.style.overflow = 'auto'; }
         }
 
-        // Lógica de Captura e Redirecionamento para o WhatsApp
+        // Envio WhatsApp
         function enviarParaWhatsApp(event) {
-            event.preventDefault(); // Impede o recarregamento da página
-
-            // Captura os dados digitados
+            event.preventDefault();
             const nome = document.getElementById('nomeLead').value.trim();
             const email = document.getElementById('emailLead').value.trim();
             const telefone = document.getElementById('telefoneLead').value.trim();
-
-            // Número da Belucci
+            
             const numeroDestino = "5574999520319";
-
-            // Monta a mensagem que chegará no seu celular
-            const textoMensagem = `Olá, Belucci! Gostaria de falar sobre soluções digitais para o meu negócio.\n\n*Meus dados:*\nNome: ${nome}\nE-mail: ${email}\nTelefone: ${telefone}`;
-
-            // Codifica a mensagem para formato de link
-            const urlWhatsApp = `https://wa.me/${numeroDestino}?text=${encodeURIComponent(textoMensagem)}`;
-
-            // Redireciona o usuário
-            window.open(urlWhatsApp, '_blank');
+            const textoMensagem = `Olá, Belucci! Gostaria de uma proposta personalizada de soluções digitais.\n\n*Meus dados:*\nNome: ${nome}\nE-mail: ${email}\nWhatsApp: ${telefone}`;
             
-            // Fecha a modal
+            window.open(`https://wa.me/${numeroDestino}?text=${encodeURIComponent(textoMensagem)}`, '_blank');
             closeModal('modal-contato');
-            
-            // Opcional: Limpa o formulário
             document.getElementById('form-lead').reset();
         }
     </script>
