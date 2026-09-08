@@ -96,7 +96,7 @@
         .stat-item h3 { font-family: var(--font-heading); font-size: 2.5rem; color: var(--gold-beige); margin-bottom: 10px; }
         .stat-item p { font-size: 1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: #E2E8F0; }
 
-        /* ================= MANIFESTO (Substituiu a imagem da família) ================= */
+        /* ================= MANIFESTO ================= */
         .trust-section { padding: 100px 5%; background-color: var(--white); text-align: center; border-bottom: 1px solid #E5E7EB; }
         .trust-container { max-width: 800px; margin: 0 auto; }
         .trust-container h2 { font-family: var(--font-heading); font-size: 2.8rem; color: var(--primary-blue); margin-bottom: 25px; line-height: 1.2; }
@@ -120,7 +120,7 @@
         .cta-content h2 { font-family: var(--font-heading); font-size: 3rem; color: var(--primary-blue); margin-bottom: 20px; }
         .cta-content p { font-size: 1.2rem; color: var(--text-dark); margin-bottom: 40px; }
 
-        /* ================= FOOTER (Otimizado para Stripe) ================= */
+        /* ================= FOOTER ================= */
         footer { background-color: #051334; color: #94A3B8; padding: 70px 5% 30px; font-size: 0.9rem; }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; max-width: 1200px; margin: 0 auto 50px; }
         .footer-col h4 { font-family: var(--font-heading); color: var(--white); font-size: 1.2rem; margin-bottom: 25px; letter-spacing: 1px; text-transform: uppercase; }
@@ -175,7 +175,6 @@
                 +55 (74) 99952-0319 | Brasil
             </div>
         </div>
-        <!-- Botão alterado para rolar até o CTA no final -->
         <a href="#cta-final" class="btn-primary header-cta">Falar com Especialista</a>
     </header>
 
@@ -260,7 +259,6 @@
             </div>
         </section>
 
-        <!-- SEÇÃO: MANIFESTO CORPORATIVO (Substituiu a imagem da família) -->
         <section class="trust-section reveal">
             <div class="trust-container">
                 <h2>Infraestrutura robusta para quem foca em resultados</h2>
@@ -269,7 +267,6 @@
             </div>
         </section>
 
-        <!-- SEÇÃO: FEEDBACKS / CLIENTES -->
         <section id="feedbacks" class="testimonials reveal">
             <div class="testi-header">
                 <span class="section-tag">Depoimentos</span>
@@ -309,7 +306,6 @@
             </div>
         </section>
 
-        <!-- CTA FINAL -->
         <section id="cta-final" class="cta-section reveal">
             <div class="cta-content">
                 <h2>O próximo nível do seu produto começa com a fundação tecnológica certa.</h2>
@@ -319,7 +315,6 @@
         </section>
     </main>
 
-    <!-- FOOTER -->
     <footer>
         <div class="footer-grid">
             <div class="footer-col">
@@ -330,7 +325,7 @@
             <div class="footer-col">
                 <h4>Contato e Suporte</h4>
                 <div class="contact-info">
-                    <p><strong>E-mail:</strong> contato@beluccidigital.com.br</p>
+                    <p><strong>E-mail:</strong> eloisebeluccimkt@gmail.com</p>
                     <p><strong>Telefone:</strong> +55 (74) 99952-0319</p>
                     <p><strong>Sede Física:</strong> Rua do Sisal, 869 - Centro<br>Jaguarari/BA - Brasil</p>
                     <p><strong>CPF (Responsável):</strong> 085.224.785-03</p>
@@ -357,7 +352,6 @@
         </div>
     </footer>
 
-    <!-- MODAL: FORMULÁRIO DE CONTATO (LEADS) -->
     <div id="modal-contato" class="modal-overlay">
         <div class="modal-content small">
             <button class="modal-close" onclick="closeModal('modal-contato')">&times;</button>
@@ -388,7 +382,6 @@
         </div>
     </div>
 
-    <!-- MODAL: TERMOS DE USO (Expandido para Stripe) -->
     <div id="modal-termos" class="modal-overlay">
         <div class="modal-content legal-text">
             <button class="modal-close" onclick="closeModal('modal-termos')">&times;</button>
@@ -414,7 +407,6 @@
         </div>
     </div>
 
-    <!-- MODAL: PRIVACIDADE (Expandido) -->
     <div id="modal-privacidade" class="modal-overlay">
         <div class="modal-content legal-text">
             <button class="modal-close" onclick="closeModal('modal-privacidade')">&times;</button>
@@ -437,7 +429,6 @@
         </div>
     </div>
 
-    <!-- MODAL: REEMBOLSO (Expandido para Stripe) -->
     <div id="modal-reembolso" class="modal-overlay">
         <div class="modal-content legal-text">
             <button class="modal-close" onclick="closeModal('modal-reembolso')">&times;</button>
@@ -456,14 +447,12 @@
                 </ul>
                 
                 <h3>3. Procedimento de Estorno</h3>
-                <p>As solicitações de cancelamento devem ser feitas por escrito para <em>contato@beluccidigital.com.br</em>. O estorno será processado diretamente pelo mesmo meio de pagamento utilizado na compra (cartão de crédito, Pix) em um prazo máximo de 10 (dez) dias úteis após a confirmação. O prazo para que o crédito apareça na fatura depende da administradora do cartão de crédito do cliente.</p>
+                <p>As solicitações de cancelamento devem ser feitas por escrito para <em>eloisebeluccimkt@gmail.com</em>. O estorno será processado diretamente pelo mesmo meio de pagamento utilizado na compra (cartão de crédito, Pix) em um prazo máximo de 10 (dez) dias úteis após a confirmação. O prazo para que o crédito apareça na fatura depende da administradora do cartão de crédito do cliente.</p>
             </div>
         </div>
     </div>
 
-    <!-- SCRIPTS -->
     <script>
-        // Animação de Scroll
         document.addEventListener("DOMContentLoaded", () => {
             const reveals = document.querySelectorAll(".reveal");
             const revealOnScroll = new IntersectionObserver((entries) => {
@@ -476,14 +465,12 @@
             reveals.forEach(reveal => { revealOnScroll.observe(reveal); });
         });
 
-        // Modais
         function openModal(id) { document.getElementById(id).classList.add('active'); document.body.style.overflow = 'hidden'; }
         function closeModal(id) { document.getElementById(id).classList.remove('active'); document.body.style.overflow = 'auto'; }
         window.onclick = function(event) {
             if (event.target.classList.contains('modal-overlay')) { event.target.classList.remove('active'); document.body.style.overflow = 'auto'; }
         }
 
-        // Envio WhatsApp
         function enviarParaWhatsApp(event) {
             event.preventDefault();
             const nome = document.getElementById('nomeLead').value.trim();
